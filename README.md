@@ -1,1 +1,1 @@
-# Tecnocom-Gesti-n
+# Tecnocom-Gestion
