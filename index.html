@@ -3,115 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnocom Gestión | Software de Gestión Comercial y Pymes</title>
-    <!-- Fuente moderna Inter -->
+    <title>Tecnocom Gestión | Software de Gestión Comercial</title>
+    <!-- Google Fonts Inter & Outfit (Estilo SaaS / Tango) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #1e40af; /* Azul corporativo estilo Tango */
-            --primary-hover: #1d4ed8;
-            --accent: #25D366; /* Verde WhatsApp / Conversión */
-            --accent-hover: #128C7E;
-            --dark: #0f172a;
-            --gray-bg: #f8fafc;
-            --gray-card: #ffffff;
-            --text-main: #334155;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.01);
+            --bg-hero: #0b1329;       /* Azul oscuro profundo estilo Tango Header */
+            --primary-blue: #0066FF;  /* Azul corporativo de acento */
+            --green-btn: #00D26A;     /* Verde Tango brillante para acciones */
+            --green-hover: #00B359;
+            --text-dark: #0F172A;
+            --text-muted: #64748B;
+            --bg-gray: #F8FAFC;
+            --border-color: #E2E8F0;
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; color: var(--text-main); background-color: #ffffff; line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; color: var(--text-dark); background-color: #FFFFFF; line-height: 1.6; }
+        h1, h2, h3, .logo { font-family: 'Outfit', sans-serif; }
 
-        /* Barra Superior / Header */
-        header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .logo span { color: var(--primary); }
-        .nav-links { display: flex; gap: 28px; align-items: center; }
-        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--primary); }
-        .btn-header { background-color: var(--primary); color: #ffffff !important; padding: 10px 22px; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
-        .btn-header:hover { background-color: var(--primary-hover); }
+        /* Navegación */
+        nav { background: var(--bg-hero); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--green-btn); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #CBD5E1; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-links a:hover { color: #FFFFFF; }
+        .btn-nav-demo { background: var(--green-btn); color: #000000 !important; font-weight: 700 !important; padding: 10px 22px; border-radius: 50px; transition: all 0.2s; }
+        .btn-nav-demo:hover { background: var(--green-hover); transform: translateY(-1px); }
 
-        /* Hero Section estilo Tango (2 columnas) */
-        .hero-section { background: linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%); padding: 80px 24px 60px; }
-        .hero-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .hero-tag { display: inline-block; background: #dbeafe; color: var(--primary); font-weight: 700; font-size: 0.85rem; padding: 6px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 20px; }
-        .hero-left h1 { font-size: 2.8rem; font-weight: 800; color: var(--dark); line-height: 1.15; margin-bottom: 20px; }
-        .hero-left p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 32px; font-weight: 400; }
-        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        /* Hero Section estilo Tango */
+        header.hero { background: var(--bg-hero); color: #FFFFFF; padding: 80px 8% 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; position: relative; overflow: hidden; }
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 102, 255, 0.2); border: 1px solid rgba(0, 102, 255, 0.4); color: #60A5FA; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; }
+        .hero-content h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px; }
+        .hero-content h1 span { color: var(--green-btn); }
+        .hero-content p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 36px; max-width: 540px; font-weight: 400; }
         
-        .btn-primary { background-color: var(--accent); color: white; padding: 16px 32px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3); transition: all 0.2s; }
-        .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
-        .btn-outline { background-color: white; color: var(--dark); border: 1px solid var(--border); padding: 16px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 1.05rem; transition: background 0.2s; }
-        .btn-outline:hover { background-color: var(--gray-bg); }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-action-primary { background: var(--green-btn); color: #000000; padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0, 210, 106, 0.3); }
+        .btn-action-primary:hover { background: var(--green-hover); transform: translateY(-2px); }
+        .btn-action-secondary { background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); padding: 16px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.05rem; transition: background 0.2s; }
+        .btn-action-secondary:hover { background: rgba(255,255,255,0.08); }
 
-        /* Mockup / Captura de pantalla derecha */
-        .hero-right { position: relative; }
-        .window-mockup { background: white; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); overflow: hidden; }
-        .window-bar { background: #f1f5f9; padding: 12px 16px; display: flex; gap: 8px; border-bottom: 1px solid var(--border); }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-red { background: #ef4444; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-green { background: #10b981; }
-        .window-content { padding: 50px 30px; text-align: center; background: #fafafa; }
-        .window-content h3 { font-size: 1.3rem; color: var(--dark); margin-bottom: 10px; }
-        .window-content p { color: var(--text-muted); font-size: 0.95rem; }
+        /* Visual Derecho Hero */
+        .hero-visual { position: relative; }
+        .card-preview { background: #1E293B; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); padding: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); }
+        .preview-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 15px; }
+        .preview-title { font-size: 0.9rem; color: #94A3B8; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .status-dot { width: 10px; height: 10px; background: var(--green-btn); border-radius: 50%; box-shadow: 0 0 10px var(--green-btn); }
+        
+        .preview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .stat-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 16px; border-radius: 12px; }
+        .stat-box small { color: #64748B; font-size: 0.8rem; display: block; }
+        .stat-box strong { color: #FFFFFF; font-size: 1.3rem; font-family: 'Outfit', sans-serif; }
 
-        /* Barra de Métricas / Credibilidad */
-        .stats-bar { background: var(--dark); color: white; padding: 40px 24px; }
-        .stats-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center; }
-        .stat-item h3 { font-size: 2.2rem; font-weight: 800; color: #60a5fa; margin-bottom: 4px; }
-        .stat-item p { font-size: 0.95rem; color: #94a3b8; }
+        /* Sección Módulos / Soluciones */
+        .section-padding { padding: 100px 8%; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header span { color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin-top: 8px; }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; margin-top: 12px; }
 
-        /* Contendedores de Secciones */
-        .section-container { max-width: 1200px; margin: 0 auto; padding: 90px 24px; }
-        .section-title { text-align: center; max-width: 750px; margin: 0 auto 60px; }
-        .section-title h2 { font-size: 2.2rem; font-weight: 800; color: var(--dark); margin-bottom: 16px; }
-        .section-title p { font-size: 1.1rem; color: var(--text-muted); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .tango-card { background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 16px; padding: 40px 30px; transition: all 0.3s ease; position: relative; }
+        .tango-card:hover { border-color: var(--primary-blue); transform: translateY(-6px); box-shadow: var(--shadow-card); }
+        .card-icon { width: 60px; height: 60px; background: #F0F6FF; color: var(--primary-blue); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 24px; }
+        .tango-card h3 { font-size: 1.35rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
+        .tango-card p { color: var(--text-muted); font-size: 0.98rem; }
 
-        /* Grilla de Funcionalidades */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
-        .card-feature { background: var(--gray-card); border: 1px solid var(--border); border-radius: 12px; padding: 36px; box-shadow: var(--shadow); transition: all 0.3s ease; }
-        .card-feature:hover { border-color: var(--primary); transform: translateY(-4px); }
-        .icon-circle { width: 56px; height: 56px; background: #eff6ff; color: var(--primary); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 24px; }
-        .card-feature h3 { font-size: 1.3rem; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
-        .card-feature p { color: var(--text-muted); font-size: 0.98rem; }
+        /* Banner de Confianza / Rubros */
+        .bg-light-blue { background: var(--bg-gray); border-y: 1px solid var(--border-color); }
+        .rubros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .rubro-item { background: #FFFFFF; padding: 24px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; font-weight: 700; color: var(--text-dark); }
+        .rubro-item span { display: block; font-size: 2rem; margin-bottom: 8px; }
 
-        /* Módulos Especializados */
-        .bg-light { background-color: var(--gray-bg); border-y: 1px solid var(--border); }
-        .spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-        .spec-item { background: white; padding: 24px; border-radius: 10px; border: 1px solid var(--border); display: flex; gap: 16px; align-items: start; }
-        .spec-icon { color: var(--primary); font-weight: 800; font-size: 1.2rem; }
-        .spec-item h4 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-        .spec-item p { font-size: 0.9rem; color: var(--text-muted); }
-
-        /* Preguntas Frecuentes */
+        /* FAQ */
         .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .faq-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
-        .faq-card p { color: var(--text-muted); font-size: 0.98rem; }
+        .faq-item h4 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Banner Final CTA */
-        .cta-box { background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%); color: white; border-radius: 20px; padding: 70px 40px; text-align: center; margin-bottom: 80px; }
-        .cta-box h2 { font-size: 2.3rem; font-weight: 800; margin-bottom: 16px; }
-        .cta-box p { color: #94a3b8; font-size: 1.15rem; max-width: 650px; margin: 0 auto 36px; }
+        /* CTA Final estilo Tango */
+        .cta-banner { background: linear-gradient(135deg, var(--bg-hero) 0%, #152243 100%); color: #FFFFFF; border-radius: 24px; padding: 80px 40px; text-align: center; margin-bottom: 80px; }
+        .cta-banner h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; }
+        .cta-banner p { color: #94A3B8; font-size: 1.15rem; max-width: 600px; margin: 0 auto 36px; }
 
         /* Botón Flotante WhatsApp */
-        .ws-float { position: fixed; bottom: 30px; right: 30px; background: var(--accent); color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); text-decoration: none; font-size: 32px; z-index: 999; transition: transform 0.2s; }
-        .ws-float:hover { transform: scale(1.08); }
+        .ws-float { position: fixed; bottom: 30px; right: 30px; background: var(--green-btn); color: #000; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 210, 106, 0.4); text-decoration: none; font-size: 32px; z-index: 999; transition: transform 0.2s; }
+        .ws-float:hover { transform: scale(1.1); }
 
-        footer { text-align: center; padding: 40px 24px; background: white; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.95rem; }
+        footer { text-align: center; padding: 30px; background: #FFFFFF; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
 
-        @media (max-width: 900px) {
-            .hero-container { grid-template-columns: 1fr; text-align: center; }
-            .hero-left h1 { font-size: 2.2rem; }
+        @media (max-width: 992px) {
+            header.hero { grid-template-columns: 1fr; text-align: center; padding-top: 50px; }
+            .hero-content h1 { font-size: 2.4rem; }
             .hero-actions { justify-content: center; }
+            .hero-content p { margin: 0 auto 30px; }
             .faq-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
         }
@@ -119,199 +109,162 @@
 </head>
 <body>
 
-    <!-- Header / Navegación Superior -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Tecnocom <span>Gestión</span></a>
-            <div class="nav-links">
-                <a href="#funciones">Funcionalidades</a>
-                <a href="#modulos">Módulos</a>
-                <a href="#faq">Preguntas Frecuentes</a>
-                <!-- REEMPLAZA EL NÚMERO CON TU WHATSAPP REAL -->
-                <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-header" target="_blank">Pedir Demo</a>
+    <!-- Navegación estilo Tango -->
+    <nav>
+        <a href="#" class="logo">Tecnocom <span>Gestión</span></a>
+        <div class="nav-links">
+            <a href="#funciones">Soluciones</a>
+            <a href="#rubros">Rubros</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-nav-demo" target="_blank">Probar Demo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Principal -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">⚡ Software Comercial para Pymes</div>
+            <h1>El control total de tu comercio, <span>en un solo lugar.</span></h1>
+            <p>Gestiona ventas, inventario, caja y cuentas corrientes con un sistema potente, rápido y diseñado para la operativa diaria de tu negocio.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-action-primary" target="_blank">
+                    📱 Solicitar Demo Gratis
+                </a>
+                <a href="#funciones" class="btn-action-secondary">Ver Soluciones</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="card-preview">
+                <div class="preview-header">
+                    <span class="preview-title">Panel de Control General</span>
+                    <div class="status-dot"></div>
+                </div>
+                <p style="color: #E2E8F0; font-weight: 600; margin-bottom: 5px;">Tecnocom Gestión v2026</p>
+                <p style="color: #64748B; font-size: 0.85rem;">Módulos de Punto de Venta y Stock integrados en tiempo real.</p>
+                
+                <div class="preview-grid">
+                    <div class="stat-box">
+                        <small>Ventas del Día</small>
+                        <strong>En línea</strong>
+                    </div>
+                    <div class="stat-box">
+                        <small>Control de Stock</small>
+                        <strong>Automatizado</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section (Estilo Tango / SaaS) -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-left">
-                <span class="hero-tag">Sistema de Gestión Comercial</span>
-                <h1>El software que potencia el control de tu comercio</h1>
-                <p>Gestiona tu inventario, ventas, caja diaria y cuentas corrientes en una sola plataforma ágil, robusta y pensada para la realidad de tu Pyme.</p>
-                <div class="hero-actions">
-                    <!-- REEMPLAZA EL NÚMERO CON TU WHATSAPP REAL -->
-                    <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-primary" target="_blank">
-                        💬 Probar Demo por WhatsApp
-                    </a>
-                    <a href="#funciones" class="btn-outline">Conocer más</a>
-                </div>
-            </div>
-            <div class="hero-right">
-                <div class="window-mockup">
-                    <div class="window-bar">
-                        <div class="dot dot-red"></div>
-                        <div class="dot dot-yellow"></div>
-                        <div class="dot dot-green"></div>
-                    </div>
-                    <div class="window-content">
-                        <h3>🖥️ Vista Previa de Tecnocom Gestión</h3>
-                        <p>Interfaz limpia y organizada para operar sin demoras en el mostrador.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Barra de Métricas estilo Corporativo -->
-    <section class="stats-bar">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>+100%</h3>
-                <p>Agilidad en el cobro y ventas</p>
-            </div>
-            <div class="stat-item">
-                <h3>0%</h3>
-                <p>Complicaciones técnicas</p>
-            </div>
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <p>Control total de tus datos</p>
-            </div>
-            <div class="stat-item">
-                <h3>Directo</h3>
-                <p>Soporte por WhatsApp</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Funcionalidades Clave -->
-    <section class="section-container" id="funciones">
-        <div class="section-title">
-            <h2>Diseñado para responder a las exigencias de tu negocio</h2>
-            <p>Todo lo que necesitas para llevar la administración al día sin perder tiempo en tareas manuales.</p>
+    <!-- Módulos principales -->
+    <section class="section-padding" id="funciones">
+        <div class="section-header">
+            <span>Soluciones Integrales</span>
+            <h2>Todo lo que tu comercio necesita para crecer</h2>
+            <p>Módulos diseñados para optimizar los procesos claves de tu empresa o negocio local.</p>
         </div>
 
-        <div class="features-grid">
-            <div class="card-feature">
-                <div class="icon-circle">🛒</div>
-                <h3>Punto de Venta e Inventario</h3>
-                <p>Cobros rápidos por código de barras o descripción. Búsqueda instantánea de productos y actualización de listas de precios en segundos.</p>
+        <div class="cards-grid">
+            <div class="tango-card">
+                <div class="card-icon">🛒</div>
+                <h3>Punto de Venta Ultra Rápido</h3>
+                <p>Cobro ágil en mostrador mediante código de barras o búsqueda rápida. Múltiples medios de pago y arqueo de caja diario.</p>
             </div>
 
-            <div class="card-feature">
-                <div class="icon-circle">📦</div>
-                <h3>Control de Stock y Alertas</h3>
-                <p>Lleva el registro exacto de existencias. Recibe alertas automáticas de stock mínimo para evitar quedarte sin mercadería.</p>
+            <div class="tango-card">
+                <div class="card-icon">📦</div>
+                <h3>Gestión de Stock e Inventario</h3>
+                <p>Control exacto de miles de artículos. Ideal para ferreterías o repuesteras con alertas automáticas de stock mínimo.</p>
             </div>
 
-            <div class="card-feature">
-                <div class="icon-circle">💳</div>
-                <h3>Cuentas Corrientes y Fiados</h3>
-                <p>Administra saldos de clientes, entregas a cuenta e historial de pagos de forma clara y ordenada.</p>
+            <div class="tango-card">
+                <div class="card-icon">💳</div>
+                <h3>Cuentas Corrientes</h3>
+                <p>Lleva el registro exacto de lo que te deben tus clientes, recibos de cobro, fiados y límites de crédito.</p>
             </div>
 
-            <div class="card-feature">
-                <div class="icon-circle">📊</div>
-                <h3>Reportes e Informes Clave</h3>
-                <p>Analiza cuáles son los artículos más vendidos, tus márgenes de ganancia y el rendimiento total del mes con gráficos simples.</p>
+            <div class="tango-card">
+                <div class="card-icon">📊</div>
+                <h3>Informes y Estadísticas</h3>
+                <p>Toma decisiones con reportes automáticos sobre rentabilidad, productos más vendidos y totales acumulados.</p>
             </div>
 
-            <div class="card-feature">
-                <div class="icon-circle">📁</div>
+            <div class="tango-card">
+                <div class="card-icon">📂</div>
                 <h3>Importación desde Excel</h3>
-                <p>Carga masivamente tu catálogo actual de productos y precios directamente desde planillas de Excel sin reconfeccionar todo.</p>
+                <p>Migra tus artículos y listas de precios desde planillas Excel sin tener que cargar nada manualmente.</p>
             </div>
 
-            <div class="card-feature">
-                <div class="icon-circle">🤝</div>
-                <h3>Soporte y Acompañamiento</h3>
-                <p>Te acompañamos desde el día uno en la instalación y configuración inicial. Asistencia rápida sin intermediarios.</p>
+            <div class="tango-card">
+                <div class="card-icon">🤝</div>
+                <h3>Soporte Personalizado</h3>
+                <p>Acompañamiento directo en la instalación y puesta en marcha con atención inmediata por WhatsApp.</p>
             </div>
         </div>
     </section>
 
-    <!-- Módulos Adicionales (Sección Gris) -->
-    <section class="bg-light" id="modulos">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Apto para múltiples rubros comerciales</h2>
-                <p>Optimizado para resolver las necesidades específicas de negocios locales y Pymes.</p>
-            </div>
+    <!-- Sección Rubros -->
+    <section class="section-padding bg-light-blue" id="rubros">
+        <div class="section-header">
+            <span>Especialización</span>
+            <h2>Adaptado a la medida de tu rubro</h2>
+        </div>
 
-            <div class="spec-grid">
-                <div class="spec-item">
-                    <span class="spec-icon">✓</span>
-                    <div>
-                        <h4>Ferreterías y Buloneras</h4>
-                        <p>Gestión ágil de miles de artículos, códigos alternativos y variantes.</p>
-                    </div>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-icon">✓</span>
-                    <div>
-                        <h4>Comercios y Autoservicios</h4>
-                        <p>Cobro ultra rápido en mostrador y control de caja diaria.</p>
-                    </div>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-icon">✓</span>
-                    <div>
-                        <h4>Repuesteras y Corralones</h4>
-                        <p>Manejo eficiente de inventarios amplios y cuentas corrientes.</p>
-                    </div>
-                </div>
-                <div class="spec-item">
-                    <span class="spec-icon">✓</span>
-                    <div>
-                        <h4>Pymes y Distribuidores</h4>
-                        <p>Emisión rápida de presupuestos, comprobantes y reportes de rentabilidad.</p>
-                    </div>
-                </div>
+        <div class="rubros-grid">
+            <div class="rubro-item">
+                <span>🔧</span> Ferreterías y Buloneras
+            </div>
+            <div class="rubro-item">
+                <span>🏪</span> Comercios y Minimarkets
+            </div>
+            <div class="rubro-item">
+                <span>⚙️</span> Repuesteras y Talleres
+            </div>
+            <div class="rubro-item">
+                <span>🏢</span> Distribuidores y Pymes
             </div>
         </div>
     </section>
 
     <!-- Preguntas Frecuentes -->
-    <section class="section-container" id="faq">
-        <div class="section-title">
+    <section class="section-padding" id="faq">
+        <div class="section-header">
             <h2>Preguntas Frecuentes</h2>
         </div>
 
         <div class="faq-grid">
-            <div class="faq-card">
-                <h4>¿Qué necesito para instalar el software?</h4>
-                <p>Solo requieres una computadora comercial estándar. Nosotros nos encargamos de guiarte en el proceso de configuración inicial.</p>
+            <div class="faq-item">
+                <h4>¿Qué requisitos de equipamiento necesita?</h4>
+                <p>Funciona en cualquier computadora comercial estándar con sistema operativo Windows. Nos encargamos de asistirte en la instalación.</p>
             </div>
-            <div class="faq-card">
-                <h4>¿Puedo migrar mis listas de precios actuales?</h4>
-                <p>¡Sí! El sistema te permite importar tu lista de artículos y precios desde un archivo Excel en pocos pasos.</p>
+            <div class="faq-item">
+                <h4>¿Puedo probar el sistema antes de comprarlo?</h4>
+                <p>¡Sí! Coordinamos una demostración rápida por WhatsApp para mostrarte el funcionamiento adaptado a tu negocio.</p>
             </div>
-            <div class="faq-card">
-                <h4>¿El sistema maneja límites de crédito o fiados?</h4>
-                <p>Sí, permite registrar las compras a cuenta de tus clientes y llevar el detalle actualizado de sus saldos y pagos.</p>
+            <div class="faq-item">
+                <h4>¿Tiene límite de productos cargados?</h4>
+                <p>No, el sistema está optimizado para buscar y gestionar catálogos con miles de artículos sin perder velocidad.</p>
             </div>
-            <div class="faq-card">
-                <h4>¿Cómo solicito una demostración?</h4>
-                <p>Escríbenos por WhatsApp y coordinaremos una demo breve para mostrarte cómo funciona el sistema adaptado a tu negocio.</p>
+            <div class="faq-item">
+                <h4>¿Cómo recibo las actualizaciones?</h4>
+                <p>Las mejoras y actualizaciones del software se instalan de forma rápida y asistida por nuestro equipo.</p>
             </div>
         </div>
     </section>
 
-    <!-- Banner Final de Cierre -->
-    <div class="section-container" style="padding-top: 0;">
-        <div class="cta-box">
-            <h2>Lleva la gestión de tu negocio al siguiente nivel</h2>
-            <p>Contáctanos hoy mismo y descubre lo simple que es administrar tu comercio con Tecnocom Gestión.</p>
-            <!-- REEMPLAZA EL NÚMERO CON TU WHATSAPP REAL -->
-            <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-primary" target="_blank">
-                📱 Solicitar Demo por WhatsApp
+    <!-- Banner Cierre CTA -->
+    <div style="padding: 0 8%;">
+        <div class="cta-banner">
+            <h2>Empieza a organizar tu comercio hoy mismo</h2>
+            <p>Escríbenos y solicita una demostración guiada del software sin compromiso.</p>
+            <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="btn-action-primary" target="_blank">
+                📱 Contactar por WhatsApp
             </a>
         </div>
     </div>
 
-    <!-- Botón Flotante de WhatsApp -->
+    <!-- Botón Flotante WhatsApp -->
     <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20solicitar%20una%20demo%20de%20Tecnocom%20Gestión" class="ws-float" target="_blank" title="Contactar por WhatsApp">
         💬
     </a>
