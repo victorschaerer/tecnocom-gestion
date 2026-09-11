@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnocom Gestión | Software de Gestión Comercial</title>
-    <!-- Google Fonts Inter & Outfit (Estilo SaaS / Tango) -->
+    <!-- Google Fonts Inter & Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-hero: #0b1329;       /* Azul oscuro profundo estilo Tango Header */
+            --bg-hero: #0b1329;       /* Azul oscuro profundo */
             --primary-blue: #0066FF;  /* Azul corporativo de acento */
-            --green-btn: #00D26A;     /* Verde Tango brillante para acciones */
+            --green-btn: #00D26A;     /* Verde brillante para acciones */
             --green-hover: #00B359;
             --text-dark: #0F172A;
             --text-muted: #64748B;
@@ -27,16 +27,17 @@
         h1, h2, h3, .logo { font-family: 'Outfit', sans-serif; }
 
         /* Navegación */
-        nav { background: var(--bg-hero); padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.6rem; font-weight: 800; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        nav { background: var(--bg-hero); padding: 16px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 8px; }
         .logo span { color: var(--green-btn); }
-        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { text-decoration: none; color: #CBD5E1; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
         .nav-links a:hover { color: #FFFFFF; }
-        .btn-nav-demo { background: var(--green-btn); color: #000000 !important; font-weight: 700 !important; padding: 10px 22px; border-radius: 50px; transition: all 0.2s; }
+        
+        .btn-nav-demo { background: var(--green-btn); color: #000000 !important; font-weight: 700 !important; padding: 10px 20px; border-radius: 50px; transition: all 0.2s; white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; }
         .btn-nav-demo:hover { background: var(--green-hover); transform: translateY(-1px); }
 
-        /* Hero Section estilo Tango */
+        /* Hero Section */
         header.hero { background: var(--bg-hero); color: #FFFFFF; padding: 80px 8% 100px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; position: relative; overflow: hidden; }
         .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 102, 255, 0.2); border: 1px solid rgba(0, 102, 255, 0.4); color: #60A5FA; padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px; }
         .hero-content h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.15; margin-bottom: 20px; letter-spacing: -0.5px; }
@@ -44,9 +45,9 @@
         .hero-content p { font-size: 1.2rem; color: #94A3B8; margin-bottom: 36px; max-width: 540px; font-weight: 400; }
         
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .btn-action-primary { background: var(--green-btn); color: #000000; padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0, 210, 106, 0.3); }
+        .btn-action-primary { background: var(--green-btn); color: #000000; padding: 16px 32px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; box-shadow: 0 4px 20px rgba(0, 210, 106, 0.3); text-align: center; justify-content: center; }
         .btn-action-primary:hover { background: var(--green-hover); transform: translateY(-2px); }
-        .btn-action-secondary { background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); padding: 16px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.05rem; transition: background 0.2s; }
+        .btn-action-secondary { background: transparent; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.2); padding: 16px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; font-size: 1.05rem; transition: background 0.2s; text-align: center; }
         .btn-action-secondary:hover { background: rgba(255,255,255,0.08); }
 
         /* Visual Derecho Hero */
@@ -62,65 +63,82 @@
         .stat-box strong { color: #FFFFFF; font-size: 1.3rem; font-family: 'Outfit', sans-serif; }
 
         /* Sección Módulos / Soluciones */
-        .section-padding { padding: 100px 8%; }
-        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-padding { padding: 80px 8%; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
         .section-header span { color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
-        .section-header h2 { font-size: 2.5rem; font-weight: 800; color: var(--text-dark); margin-top: 8px; }
-        .section-header p { color: var(--text-muted); font-size: 1.1rem; margin-top: 12px; }
+        .section-header h2 { font-size: 2.3rem; font-weight: 800; color: var(--text-dark); margin-top: 8px; }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; margin-top: 12px; }
 
-        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .tango-card { background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 16px; padding: 40px 30px; transition: all 0.3s ease; position: relative; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .tango-card { background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 16px; padding: 32px 24px; transition: all 0.3s ease; position: relative; }
         .tango-card:hover { border-color: var(--primary-blue); transform: translateY(-6px); box-shadow: var(--shadow-card); }
-        .card-icon { width: 60px; height: 60px; background: #F0F6FF; color: var(--primary-blue); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 24px; }
-        .tango-card h3 { font-size: 1.35rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
-        .tango-card p { color: var(--text-muted); font-size: 0.98rem; }
+        .card-icon { width: 56px; height: 56px; background: #F0F6FF; color: var(--primary-blue); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 20px; }
+        .tango-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .tango-card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* Highlight Card para Actualizaciones */
+        /* Highlight Card */
         .tango-card.highlight { border: 2px solid var(--green-btn); background: #F0FDF4; }
         .tango-card.highlight .card-icon { background: #DCFCE7; color: #16A34A; }
 
         /* Banner de Confianza / Rubros */
         .bg-light-blue { background: var(--bg-gray); border-y: 1px solid var(--border-color); }
-        .rubros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .rubro-item { background: #FFFFFF; padding: 24px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; font-weight: 700; color: var(--text-dark); }
-        .rubro-item span { display: block; font-size: 2rem; margin-bottom: 8px; }
+        .rubros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .rubro-item { background: #FFFFFF; padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); text-align: center; font-weight: 700; color: var(--text-dark); }
+        .rubro-item span { display: block; font-size: 1.8rem; margin-bottom: 6px; }
 
         /* FAQ */
-        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .faq-item h4 { font-size: 1.15rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .faq-item h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
         .faq-item p { color: var(--text-muted); font-size: 0.95rem; }
 
-        /* CTA Final estilo Tango */
-        .cta-banner { background: linear-gradient(135deg, var(--bg-hero) 0%, #152243 100%); color: #FFFFFF; border-radius: 24px; padding: 80px 40px; text-align: center; margin-bottom: 80px; }
-        .cta-banner h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 16px; }
-        .cta-banner p { color: #94A3B8; font-size: 1.15rem; max-width: 600px; margin: 0 auto 36px; }
+        /* CTA Final */
+        .cta-banner { background: linear-gradient(135deg, var(--bg-hero) 0%, #152243 100%); color: #FFFFFF; border-radius: 24px; padding: 60px 24px; text-align: center; margin-bottom: 60px; }
+        .cta-banner h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 16px; }
+        .cta-banner p { color: #94A3B8; font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; }
 
         /* Botón Flotante WhatsApp */
-        .ws-float { position: fixed; bottom: 30px; right: 30px; background: var(--green-btn); color: #000; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 210, 106, 0.4); text-decoration: none; font-size: 32px; z-index: 999; transition: transform 0.2s; }
+        .ws-float { position: fixed; bottom: 24px; right: 24px; background: var(--green-btn); color: #000; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0, 210, 106, 0.4); text-decoration: none; font-size: 28px; z-index: 999; transition: transform 0.2s; }
         .ws-float:hover { transform: scale(1.1); }
 
         footer { text-align: center; padding: 30px; background: #FFFFFF; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; }
 
+        /* --- ADAPTACIÓN RESPONSIVA PARA CELULARES (ANDROID/IOS) --- */
         @media (max-width: 992px) {
-            header.hero { grid-template-columns: 1fr; text-align: center; padding-top: 50px; }
-            .hero-content h1 { font-size: 2.4rem; }
-            .hero-actions { justify-content: center; }
-            .hero-content p { margin: 0 auto 30px; }
+            nav { padding: 12px 4%; }
+            .logo { font-size: 1.25rem; }
+            
+            /* Ocultar únicamente los enlaces de texto en móviles */
+            .nav-link-item { display: none; }
+            
+            /* Ajustar el botón de descarga para pantallas chicas */
+            .btn-nav-demo {
+                padding: 8px 14px;
+                font-size: 0.82rem !important;
+            }
+
+            header.hero { grid-template-columns: 1fr; text-align: center; padding: 40px 5% 60px; gap: 40px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; margin: 0 auto 24px; }
+            .hero-actions { justify-content: center; flex-direction: column; width: 100%; }
+            .btn-action-primary, .btn-action-secondary { width: 100%; }
+
+            .section-padding { padding: 50px 5%; }
+            .section-header h2 { font-size: 1.8rem; }
             .faq-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; }
+            .cta-banner h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navegación estilo Tango -->
+    <!-- Navegación -->
     <nav>
         <a href="#" class="logo">Tecnocom <span>Gestión</span></a>
         <div class="nav-links">
-            <a href="#funciones">Soluciones</a>
-            <a href="#rubros">Rubros</a>
-            <a href="#faq">Preguntas Frecuentes</a>
-            <a href="https://drive.google.com/file/d/1tDUd6JsGcPHaqU7-5OxKHz5bkc23ZAI6/view?usp=drive_link" class="btn-nav-demo" target="_blank">📥 Descargar Instalador</a>
+            <a href="#funciones" class="nav-link-item">Soluciones</a>
+            <a href="#rubros" class="nav-link-item">Rubros</a>
+            <a href="#faq" class="nav-link-item">Preguntas Frecuentes</a>
+            <a href="https://drive.google.com/file/d/1tDUd6JsGcPHaqU7-5OxKHz5bkc23ZAI6/view?usp=drive_link" class="btn-nav-demo" target="_blank" rel="noopener noreferrer">📥 Descargar Instalador</a>
         </div>
     </nav>
 
@@ -131,7 +149,7 @@
             <h1>El control total de tu comercio, <span>en un solo lugar.</span></h1>
             <p>Gestiona ventas, inventario y caja con un sistema potente, rápido y siempre actualizado para la operativa diaria de tu negocio.</p>
             <div class="hero-actions">
-                <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20información%20sobre%20Tecnocom%20Gestión" class="btn-action-primary" target="_blank">
+                <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20informaci%C3%B3n%20sobre%20Tecnocom%20Gesti%C3%B3n" class="btn-action-primary" target="_blank" rel="noopener noreferrer">
                     💬 Contactar por WhatsApp
                 </a>
                 <a href="#funciones" class="btn-action-secondary">Ver Soluciones</a>
@@ -258,18 +276,18 @@
     </section>
 
     <!-- Banner Cierre CTA -->
-    <div style="padding: 0 8%;">
+    <div style="padding: 0 5%;">
         <div class="cta-banner">
             <h2>Empieza a organizar tu comercio hoy mismo</h2>
             <p>Escríbenos y solicita asesoramiento o asistencia para la puesta en marcha sin compromiso.</p>
-            <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20información%20sobre%20Tecnocom%20Gestión" class="btn-action-primary" target="_blank">
+            <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20informaci%C3%B3n%20sobre%20Tecnocom%20Gesti%C3%B3n" class="btn-action-primary" target="_blank" rel="noopener noreferrer">
                 💬 Contactar por WhatsApp
             </a>
         </div>
     </div>
 
     <!-- Botón Flotante WhatsApp -->
-    <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20información%20sobre%20Tecnocom%20Gestión" class="ws-float" target="_blank" title="Contactar por WhatsApp">
+    <a href="https://wa.me/5493794056888?text=Hola!%20Quiero%20mas%20informaci%C3%B3n%20sobre%20Tecnocom%20Gesti%C3%B3n" class="ws-float" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
         💬
     </a>
 
